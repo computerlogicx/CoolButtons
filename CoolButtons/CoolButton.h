@@ -40,4 +40,6 @@
 @property (nonatomic, strong) UIView *innerView;
 @property (nonatomic, strong) CALayer *highlightLayer;
 
+@property (nonatomic, strong) UIImageView *buttonImageView;
+
 @end

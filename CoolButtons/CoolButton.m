@@ -36,6 +36,8 @@
 
 @implementation CoolButton
 
+@synthesize buttonImageView = _buttonImageView;
+
 @synthesize buttonColor = _buttonColor;
 @synthesize innerView = _innerView;
 @synthesize highlightLayer = _highlightLayer;
@@ -82,7 +84,7 @@
     
     [self addTarget:self action:@selector(addHighlight) forControlEvents:UIControlEventTouchDown];
     [self addTarget:self action:@selector(removeHighlight) forControlEvents:UIControlEventTouchCancel|UIControlEventTouchUpInside|UIControlEventTouchUpOutside];
-    
+	
     if ([[self subviews] count] > 0)
         [self insertSubview:_innerView belowSubview:[[self subviews] objectAtIndex:0]];
     else
@@ -138,6 +140,11 @@
     // add subtle shadow to text to make the eltters look punched in like Bar Buttons.
     self.titleLabel.shadowColor = [UIColor colorWithWhite:0.0 alpha:0.25];
     self.titleLabel.shadowOffset = CGSizeMake(0, -1);
+	
+	self.buttonImageView = [[UIImageView alloc] initWithImage:[self imageForState:self.state]];
+	self.buttonImageView.contentMode = UIViewContentModeScaleAspectFit;
+	self.buttonImageView.frame = CGRectMake(6.0, 4.0, self.frame.size.height - 6.0, self.frame.size.height - 8.0);
+	[self addSubview:self.buttonImageView];
 }
 
 
@@ -173,6 +180,8 @@
     [_innerGlowLayer setStartPoint:CGPointMake(0.5, 0.0)];
     CGFloat innerGlowHeight = 1 - ((bounds.size.height-2) / bounds.size.height);
     [_innerGlowLayer setEndPoint:CGPointMake(0.5, innerGlowHeight)];
+	
+	[self.buttonImageView setImage:[self imageForState:self.state]];
 }
 
 @end
