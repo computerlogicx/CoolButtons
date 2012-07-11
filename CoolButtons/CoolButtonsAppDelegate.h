@@ -9,7 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "CoolButtonsViewController.h"
 
-@interface CoolButtonsAppDelegate : NSObject <UIApplicationDelegate> {
+@interface CoolButtonsAppDelegate : NSObject <UIApplicationDelegate>
+{
     CoolButtonsViewController *viewController;
 }
 

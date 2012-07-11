@@ -12,10 +12,11 @@
 
 @implementation CoolButtonsAppDelegate
 
-@synthesize window=_window;
-@synthesize viewController=_viewController;
+@synthesize window = _window;
+@synthesize viewController = _viewController;
 
-void uncaughtExceptionHandler(NSException *exception) {
+void uncaughtExceptionHandler(NSException *exception)
+{
     [FlurryAnalytics logError:@"Uncaught" message:@"Crash!" exception:exception];
 }
 
@@ -23,15 +24,15 @@ void uncaughtExceptionHandler(NSException *exception) {
 {
     [FlurryAnalytics startSession:FLURRY_API_STRING];
     [FlurryAnalytics logEvent:@"APPLICATION_LAUNCHED"];
-    
+
     self.viewController = [[CoolButtonsViewController alloc] initWithNibName:@"CoolButtons" bundle:nil];
     [self.window addSubview:self.viewController.view];
-    
+
     // Override point for customization after application launch.
     [self.window makeKeyAndVisible];
-    
+
     NSSetUncaughtExceptionHandler(&uncaughtExceptionHandler);
-    
+
     application.statusBarHidden = YES;
     return YES;
 }

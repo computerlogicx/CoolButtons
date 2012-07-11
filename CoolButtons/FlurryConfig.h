@@ -8,4 +8,4 @@
 
 #import <Foundation/Foundation.h>
 
-extern NSString* const FLURRY_API_STRING;
+extern NSString *const FLURRY_API_STRING;

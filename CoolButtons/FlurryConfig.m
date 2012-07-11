@@ -8,4 +8,4 @@
 
 #import "FlurryConfig.h"
 
-NSString* const FLURRY_API_STRING = @"your-key-here";
+NSString *const FLURRY_API_STRING = @"your-key-here";

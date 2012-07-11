@@ -31,7 +31,8 @@
 @class CALayer;
 @class CAGradientLayer;
 
-@interface CoolButton : UIButton {
+@interface CoolButton : UIButton
+{
     CAGradientLayer *_gradientLayer;
     CAGradientLayer *_innerGlowLayer;
 }

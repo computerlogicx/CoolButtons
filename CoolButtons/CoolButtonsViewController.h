@@ -9,30 +9,36 @@
 #import <UIKit/UIKit.h>
 #import "CoolButton.h"
 
-@interface CoolButtonsViewController : UIViewController {
+@interface CoolButtonsViewController : UIViewController
+{
     IBOutlet UISlider *redSlider;
     IBOutlet UISlider *greenSlider;
     IBOutlet UISlider *blueSlider;
     IBOutlet UIButton *myPic;
     IBOutlet UIImageView *aintSheABeaut;
     IBOutlet UIView *colorPickerView;
-    
+
     IBOutlet CoolButton *blueButton;
 }
 
 - (IBAction)sliderAction:(id)sender;
+
 - (IBAction)goToGitHub:(id)sender;
+
 - (IBAction)goToJessMartDotIn:(id)sender;
+
 - (IBAction)didTouchJessMartDotIn:(id)sender;
+
 - (IBAction)didTouchCancelJessMartDotIn:(id)sender;
+
 - (IBAction)showColorPicker:(id)sender;
 
-@property(strong, nonatomic) IBOutlet UISlider *redSlider;
-@property(strong, nonatomic) IBOutlet UISlider *greenSlider;
-@property(strong, nonatomic) IBOutlet UISlider *blueSlider;
-@property(strong, nonatomic) IBOutlet UIButton *myPic;
-@property(strong, nonatomic) IBOutlet UIImageView *aintSheABeaut;
-@property(strong, nonatomic) IBOutlet UIView *colorPickerView;
-@property(strong, nonatomic) CoolButton *blueButton;
+@property (strong, nonatomic) IBOutlet UISlider *redSlider;
+@property (strong, nonatomic) IBOutlet UISlider *greenSlider;
+@property (strong, nonatomic) IBOutlet UISlider *blueSlider;
+@property (strong, nonatomic) IBOutlet UIButton *myPic;
+@property (strong, nonatomic) IBOutlet UIImageView *aintSheABeaut;
+@property (strong, nonatomic) IBOutlet UIView *colorPickerView;
+@property (strong, nonatomic) CoolButton *blueButton;
 
 @end
